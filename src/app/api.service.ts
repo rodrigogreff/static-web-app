@@ -12,6 +12,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/endpoint`);
+    return this.http.get(`${this.apiUrl}/weatherforecast`);
   }
 }
