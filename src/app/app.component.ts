@@ -8,7 +8,7 @@ import { ApiService } from './api.service'; // ajuste o caminho se necessário
 
     <div *ngIf="carregando">Carregando...</div>
 
-    <table *ngIf="!carregando && dados?.length">
+    <table *ngIf="!carregando && dados?.length" class="tabela-dados">
       <thead>
         <tr>
           <th>Data</th>
@@ -31,6 +31,24 @@ import { ApiService } from './api.service'; // ajuste o caminho se necessário
       Nenhum dado disponível.
     </div>
   `,
+  styles: [`
+    .tabela-dados {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .tabela-dados th, .tabela-dados td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    .tabela-dados th {
+      background-color: #f4f4f4;
+    }
+    .tabela-dados tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+  `]
 })
 
 export class AppComponent implements OnInit {
@@ -57,4 +75,5 @@ export class AppComponent implements OnInit {
     });
   }
 }
+
 
