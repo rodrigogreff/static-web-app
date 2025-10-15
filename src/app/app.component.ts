@@ -8,15 +8,31 @@ import { ApiService } from './api.service'; // ajuste o caminho se necessário
 
     <div *ngIf="carregando">Carregando...</div>
 
-    <div *ngIf="!carregando && dados">
-      <pre>{{ dados | json }}</pre>
-    </div>
+    <table *ngIf="!carregando && dados?.length">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Temperatura (°C)</th>
+          <th>Resumo</th>
+          <th>Temperatura (°F)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of dados">
+          <td>{{ item.date }}</td>
+          <td>{{ item.temperatureC }}</td>
+          <td>{{ item.summary }}</td>
+          <td>{{ item.temperatureF }}</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <div *ngIf="!carregando && !dados">
+    <div *ngIf="!carregando && (!dados || dados.length === 0)">
       Nenhum dado disponível.
     </div>
   `,
 })
+
 export class AppComponent implements OnInit {
   dados: any;
   carregando = false;
@@ -41,3 +57,4 @@ export class AppComponent implements OnInit {
     });
   }
 }
+
