@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiService } from './api.service';
 
 @Component({
@@ -6,6 +6,8 @@ import { ApiService } from './api.service';
   template: `
     <div class="container">
       <h1>Dados do Backend</h1>
+
+      <button (click)="buscarDados()" class="btn-buscar">Buscar Dados</button>
 
       <div *ngIf="carregando">Carregando...</div>
 
@@ -47,6 +49,20 @@ import { ApiService } from './api.service';
       margin-bottom: 20px;
     }
 
+    .btn-buscar {
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-buscar:hover {
+      background-color: #2980b9;
+    }
+
     .tabela-dados {
       width: 100%;
       border-collapse: collapse;
@@ -68,15 +84,11 @@ import { ApiService } from './api.service';
     }
   `]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   dados: any;
   carregando = false;
 
   constructor(private apiService: ApiService) {}
-
-  ngOnInit() {
-    this.buscarDados();
-  }
 
   buscarDados() {
     this.carregando = true;
