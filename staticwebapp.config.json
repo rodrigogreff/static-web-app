@@ -2,11 +2,17 @@
   "navigationFallback": {
     "rewrite": "/index.html"
   },
+  "routes": [
+    {
+      "route": "/env.js",
+      "allowedRoles": ["anonymous"],
+      "rewrite": "/env.js"
+    }
+  ],
   "globalHeaders": {
     "Content-Type": "text/html"
   },
   "mimeTypes": {},
-  "routes": [],
   "responseOverrides": {},
   "platform": {
     "apiRuntime": "node:16"
