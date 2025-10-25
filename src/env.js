@@ -1,3 +1,3 @@
 window['env'] = {
-  API_URL: 'https://backendapinet.azurewebsites.net'
+  API_URL: '%API_URL%'
 };
