@@ -1,5 +1,14 @@
 {
-    "navigationFallback": {
-        "rewrite": "/index.html"
-    }
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  },
+  "globalHeaders": {
+    "Content-Type": "text/html"
+  },
+  "mimeTypes": {},
+  "routes": [],
+  "responseOverrides": {},
+  "platform": {
+    "apiRuntime": "node:16"
+  }
 }
