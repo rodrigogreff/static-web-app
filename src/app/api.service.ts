@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private apiUrl = 'private_apiUrl'; // <- aqui é onde você define a URL do backend
+  private apiUrl = ''; // <- aqui é onde você define a URL do backend
 
   constructor(private http: HttpClient) { }
 
